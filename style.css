@@ -1,0 +1,170 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+
+header {
+  background: #111;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
+  background: white;
+}
+
+footer {
+    position: fixed;       /* stick to bottom of viewport */
+    bottom: 20px;          /* floating slightly above the bottom */
+    left: 50%;             /* center horizontally */
+    transform: translateX(-50%); /* center precisely */
+    padding: 12px 30px;    /* comfortable padding */
+    background: rgba(17, 17, 17, 0.95); /* slightly transparent dark */
+    color: white;
+    border-radius: 15px;   /* smooth rounded edges */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* floating effect */
+    z-index: 1000;         /* always on top */
+    text-align: center;
+    max-width: 90%;        /* responsive width on small screens */
+}
+
+
+/* ===== Documentation Layout ===== */
+
+.docs-container {
+  display: flex;
+  min-height: calc(100vh - 160px);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #1e1e1e;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  font-size: 18px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.sidebar ul li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Docs Content */
+.docs-content {
+  flex: 1;
+  padding: 30px;
+  background: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .docs-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}
+
+/* ===== Social Links ===== */
+
+.socials {
+  margin-top: 10px;
+}
+
+.socials a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+}
+
+/* Footer social links */
+.footer-socials {
+  margin-top: 8px;
+}
+
+.footer-socials a {
+  color: #ccc;
+  margin: 0 8px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-socials a:hover {
+    color: #ffcc00;
+}
+
+
+/* ===== Global Sticky Footer Fix ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* full viewport height */
+}
+
+/* Make main (or docs-container) expand to push footer down */
+main, .docs-container {
+    flex: 1;        /* fill remaining vertical space */
+    min-height: 0;  /* prevents overflow issues in flex containers */
+}
+
+/* Footer stays at bottom */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #111;
+    color: white;
+}
