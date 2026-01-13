@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OpenCore Guide | Hackintosh Hub</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>OpenCore Guide</h1>
+  <p>Step-by-step Hackintosh Documentation</p>
+</header>
+
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="opencore.html">Guides</a>
+  <a href="hardware.html">Hardware</a>
+  <a href="troubleshooting.html">Troubleshooting</a>
+</nav>
+
+<div class="docs-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h3>OpenCore Guide</h3>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#requirements">Requirements</a></li>
+      <li><a href="#bios">BIOS Settings</a></li>
+      <li><a href="#usb">Create Installer</a></li>
+      <li><a href="#structure">EFI Structure</a></li>
+      <li><a href="#kexts">Kexts</a></li>
+      <li><a href="#config">config.plist</a></li>
+      <li><a href="#smbios">SMBIOS</a></li>
+      <li><a href="#install">Install macOS</a></li>
+      <li><a href="#post">Post Install</a></li>
+      <li><a href="#troubleshoot">Troubleshooting</a></li>
+    </ul>
+  </aside>
+
+  <!-- Documentation Content -->
+  <main class="docs-content">
+
+    <section id="intro">
+      <h2>Introduction</h2>
+      <p>
+        OpenCore is a modern bootloader designed to boot macOS on non-Apple hardware
+        with stability and security.
+      </p>
+    </section>
+
+    <section id="requirements">
+      <h2>Requirements</h2>
+      <ul>
+        <li>Intel CPU (4th Gen or newer)</li>
+        <li>UEFI motherboard</li>
+        <li>16GB USB drive</li>
+      </ul>
+    </section>
+
+    <section id="bios">
+      <h2>BIOS Settings</h2>
+      <p>Disable Secure Boot, Fast Boot, CSM. Enable UEFI and AHCI.</p>
+    </section>
+
+    <section id="usb">
+      <h2>Create macOS Installer</h2>
+      <pre>
+sudo /Applications/Install\ macOS.app/Contents/Resources/createinstallmedia \
+--volume /Volumes/USB
+      </pre>
+    </section>
+
+    <section id="structure">
+      <h2>EFI Folder Structure</h2>
+      <pre>
+EFI
+└── OC
+    ├── ACPI
+    ├── Drivers
+    ├── Kexts
+    └── config.plist
+      </pre>
+    </section>
+
+    <section id="kexts">
+      <h2>Essential Kexts</h2>
+      <ul>
+        <li>Lilu.kext</li>
+        <li>VirtualSMC.kext</li>
+        <li>WhateverGreen.kext</li>
+      </ul>
+    </section>
+
+    <section id="config">
+      <h2>config.plist</h2>
+      <p>Edit using ProperTree and configure Kernel, NVRAM, and PlatformInfo.</p>
+    </section>
+
+    <section id="smbios">
+      <h2>SMBIOS</h2>
+      <p>Use iMac19,1 or iMac20,1 for desktops.</p>
+    </section>
+
+    <section id="install">
+      <h2>Install macOS</h2>
+      <ol>
+        <li>Boot from USB</li>
+        <li>Select Install macOS</li>
+        <li>Format disk as APFS</li>
+      </ol>
+    </section>
+
+    <section id="post">
+      <h2>Post Installation</h2>
+      <p>Copy EFI from USB to system drive.</p>
+    </section>
+
+    <section id="troubleshoot">
+      <h2>Troubleshooting</h2>
+      <p>Check boot-args, kext order, and BIOS settings.</p>
+    </section>
+
+  </main>
+
+</div>
+
+<footer>
+  <p>© 2026 ItsPerfect Inc.</p>
+</footer>
+
+</body>
+</html>
